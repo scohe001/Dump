@@ -1,0 +1,15 @@
+ - Fix howgood replies bug (see closet message :52346396)
+ - Modify custom reports to wrap custom message in quotes and add "by [User]" (see example closet message :52350437)
+ - Turn down chatty odds
+ - On feedback given (tp/fp/rude)...
+   - Check if user has given feedback already...
+     - If they've given the feedback they're trying to give, remove (ie: responding "tp" twice would first set tp and then remove it)
+     - If they've given a feedback and they're giving a new one, clear the first feedback and set the second (with a custom message)
+   - Check total number of feedback records attributed to user...
+     - Print congratulatory message if they've reached a milestone
+       - ie: "Congratulations on your first feedback, @User! Now feed me moooaaaare :D"
+       - ie: "Let's all give @User a pat on the back for their 25th feedback!"
+       - ie: "Wowza!! That was your 100th feedback, @User! You're kicking butt!!"
+       - ie: "Holy moly did you really just give me your 250th feedback, @User?!"
+- Create a scoreboard mention command (ie: "@ips, gimme the scoreboard")
+  - Show the top 10 users with most feedbacks in a table of "User | XXX Total | YYY tp's | ZZZ fp's"
